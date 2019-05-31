@@ -1,0 +1,98 @@
+# How to connect to JIRA?
+Connection:
+    Domain: https://jira.service.dwpcloud.uk
+    Username: matthew.chave
+    Password: Eng5Ger1
+
+# What to search for?
+Criteria:
+    Project:
+        - HA
+    # Issue types: # Which issue types to include
+    # Issue types: 
+    #    - Story
+    #    - Technical debt
+    #    - Bug
+    Filters:
+        - jira_to_actionable
+
+# Describe the workflow. Each step can be mapped to either a single JIRA
+# status, or a list of statuses that will be treated as equivalent
+Workflow:
+    Open:
+        - Open
+        - Reopened
+        - To Do
+        - Needs Impact
+        - Further Elaboration Required
+    Backlog Refinement:
+        - Selected
+        - Refine
+        - 3 Amigos
+        - Ready
+        - Ready For Dev
+    In Progress:
+        - In Progress
+        - Blocked
+    Tech Review:
+        - Ready for Dev Review
+        - Tech Review
+    Testing:
+        - Ready for QA
+        - In QA
+        - QA Test
+        - QA Test Complete
+    Acceptance:
+        - PO Review
+    Resolved:
+        - RESOLVED
+        - Release to Live
+    Closed:
+        - Closed
+        - Done
+
+# Map field names to additional attributes to extract
+Attributes:
+    status: status
+    components: components
+    fixVersions: fixVersions
+Feature Flags:
+    MaskName: true
+
+
+
+
+
+
+
+
+
+################################
+### V1 LEGACY VERSION BELOW ####
+###    RUN WITH --LEGACY    ####
+################################
+
+# Connection:
+#     Domain: https://actionableagile.atlassian.net
+#     Username:
+#     Password:
+
+# Criteria:
+#     Projects: UT
+#     Types: Story, Bug
+
+# Workflow:
+#     Backlog: Backlog, (Created)
+#     Analysis Active: Analysis Active
+#     Analysis Done: Analysis Done
+#     Dev Active: Dev Active
+#     Dev Done: Dev Done
+#     Test: Test
+#     Done: Done
+
+# Attributes:
+#     components: components
+#     fixVersions: fixVersions
+#     labels: labels
+#     priority: priority
+#     resolution: resolution
